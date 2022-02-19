@@ -4,7 +4,7 @@ class Form extends React.Component{
   render(){
     return (
       <div>
-        <form id="Firs_Form">
+        <form id="firsForm">
           <label htmlFor="inputName"> Nome:
             <input id="inputName" type="tex" placeholder="Humberto Silva" />
           </label>
@@ -37,7 +37,7 @@ class Form extends React.Component{
           </div>
           <button type="button">Next</button>
         </form>
-        <form id="Second_Form">
+        <form id="secondForm">
           <label htmlFor="inputTeam"> Time:
             <input id="inputTeam" type="tex" placeholder="Sombra Jade" />
           </label>
