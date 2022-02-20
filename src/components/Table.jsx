@@ -1,24 +1,25 @@
 import React from 'react';
 import logo from '../image/logo.png';
+import '../styles/Table.css'
 
 class Table extends React.Component {
     render() { 
         return (
-            <div>
-            <header>
+            <div className="table">
+            <header className="table-header">
+            <img src={logo} alt="Logo" className="picture-logo"/>
                 <p>Home</p>
                 <p>Cadastro</p>
                 <p>Card</p>
                 <p>Tabela</p>
                 <p>Logout</p>
-                <img src={logo} alt="Logo" />
             </header>
 
             <section>
                 <input type="text" />
             </section>
 
-            <section>
+            <section className="informations">
                 <p>ID</p>
                 <p>Nome</p>
                 <p>Função</p>
@@ -26,9 +27,9 @@ class Table extends React.Component {
                 <p>Armamentos</p>
                 <p>Características</p>
                 <p>Partidas</p>
-            </section>
-
-            <div>
+           
+               {/*   */}
+             {/*    <div className="paragraphs">
                 <p>adversário 1</p>
                 <p>adversário 2</p>
                 <p>adversário 3</p>
@@ -38,7 +39,8 @@ class Table extends React.Component {
                 <p>adversário 7</p>
                 <p>adversário 8</p>
                 <p>adversário 9</p>
-            </div>
+                </div> */}
+            </section>
             </div>
         );
     }
