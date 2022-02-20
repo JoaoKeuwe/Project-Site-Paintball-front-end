@@ -15,8 +15,8 @@ class Table extends React.Component {
                 <p>Logout</p>
             </header>
 
-            <section>
-                <input type="text" />
+            <section >
+                <input type="text" className="input-header" />
             </section>
 
             <section className="informations">
