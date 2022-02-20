@@ -18,7 +18,27 @@ class Table extends React.Component {
                 <input type="text" />
             </section>
 
+            <section>
+                <p>ID</p>
+                <p>Nome</p>
+                <p>Função</p>
+                <p>Time</p>
+                <p>Armamentos</p>
+                <p>Características</p>
+                <p>Partidas</p>
+            </section>
 
+            <div>
+                <p>adversário 1</p>
+                <p>adversário 2</p>
+                <p>adversário 3</p>
+                <p>adversário 4</p>
+                <p>adversário 5</p>
+                <p>adversário 6</p>
+                <p>adversário 7</p>
+                <p>adversário 8</p>
+                <p>adversário 9</p>
+            </div>
             </div>
         );
     }
