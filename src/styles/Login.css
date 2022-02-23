@@ -1,0 +1,41 @@
+.image-login {
+    width: 70px;
+    display:flex;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.input-email {
+    display:flex;
+    margin-right: auto;
+    width: 200px;
+    margin-left: auto; 
+    margin-top: 10px;
+}
+
+.input-password {
+    display:flex;
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto; 
+    margin-top: 10px;
+}
+
+.button-login {
+    display:flex;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto; 
+    margin-top: 10px;
+}
+
+.label-email{
+    display:flex;
+    margin-right: auto;
+    margin-left: auto; 
+
+}
+
+.login {
+    margin-top: 300px;
+}

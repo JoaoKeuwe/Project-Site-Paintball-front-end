@@ -7,7 +7,7 @@ class Table extends React.Component {
         return (
             <div className="table">
             <header className="table-header">
-            <img src={logo} alt="Logo" className="picture-logo"/>
+            <img src={logo} alt="Logo"  />
                 <p>Home</p>
                 <p>Cadastro</p>
                 <p>Card</p>
