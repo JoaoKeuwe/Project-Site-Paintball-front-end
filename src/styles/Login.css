@@ -1,5 +1,5 @@
 .image-login {
-    width: 70px;
+    width: 100px;
     display:flex;
     margin-right: auto;
     margin-left: auto;
@@ -8,14 +8,14 @@
 .input-email {
     display:flex;
     margin-right: auto;
-    width: 200px;
+    width: 260px;
     margin-left: auto; 
     margin-top: 10px;
 }
 
 .input-password {
     display:flex;
-    width: 200px;
+    width: 260px;
     margin-right: auto;
     margin-left: auto; 
     margin-top: 10px;
@@ -23,6 +23,7 @@
 
 .button-login {
     display:flex;
+    width: 80px;
     text-align: center;
     margin-right: auto;
     margin-left: auto; 
@@ -31,8 +32,8 @@
 
 .label-email{
     display:flex;
-    margin-right: auto;
-    margin-left: auto; 
+    flex-direction:column;
+    
 
 }
 
