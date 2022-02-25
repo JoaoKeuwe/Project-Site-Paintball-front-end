@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../styles/Form.css';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
+import FormContext from '../context/FormContext.js'
 
 const initiaFormState = {
   playerName: '',
@@ -28,11 +29,14 @@ const initiaFormState = {
 function Form () {
   const [form, setForm] = useState(initiaFormState);
   const [view, setView] = useState(1);
+  const {setPlayer} = useContext(FormContext);
+
   const handleInputChange = (value) => {
     setForm(form => ({...form, ...value}))
   }
 
   const handleSubmit = () => {
+    setPlayer(form);
     setForm(initiaFormState);
   }
 
