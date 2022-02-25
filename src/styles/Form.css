@@ -1,0 +1,92 @@
+*{
+  background: #3D3D3D; 
+}
+
+#firsForm, #secondForm{
+  width: 80%;
+  margin: 50px auto;
+  color: white;
+  text-align: center;
+}
+
+.InputForm {
+  color: white;
+  padding: 5px 20px;
+  background: #282828;
+  border: 1px solid #696565;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
+  border-radius: 10px;
+  width: 800px;
+  margin-bottom: 20px;
+}
+
+label {
+  text-align: left;
+}
+
+.smallInput {
+  width: 350px;
+}
+
+#inputName {
+  width: 500px;
+}
+
+#inputAge {
+  width: 180px;
+}
+
+.InputForm:focus {
+  outline: 0;
+  border: 1px solid #1D5EFF;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
+}
+
+.BlueButton, .GreenButton {
+  color: white;
+  width: 176px;
+  height: 40px;
+  background: #6F6F6F;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.BlueButton:hover {
+  background-color: #1D5EFF;
+}
+
+.GreenButton:hover {
+  background-color: #199F5D;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  input[type='range'] {
+    overflow: hidden;
+    width: 250px;
+    -webkit-appearance: none;
+    background-color: #282828;
+    border: 1px solid #696565;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+  }
+  
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 20px;
+    -webkit-appearance: none;
+    color: #199F5D;
+    margin-top: -1px;
+  }
+  
+  input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 10px;
+    cursor: ew-resize;
+    background: #199F5D;
+    box-shadow: -250px 0 0 250px #199F5D;
+  }
+}
