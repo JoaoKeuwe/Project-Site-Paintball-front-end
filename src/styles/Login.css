@@ -2,6 +2,10 @@ body {
     background-color: #282828;
 }
 
+img {
+    border: 2px solid rgb(93, 122, 88);
+}
+
 section {
     height: 500px;
     width: 600px;
@@ -11,7 +15,7 @@ section {
     
 
 
-    box-shadow: 6px 5px 19px rgb(81, 93, 79);
+    box-shadow: 6px 5px 19px rgb(93, 122, 88);
     border: 2px solid none;
     background: rgb(52,52,51);
     background: linear-gradient(109deg, rgba(52,52,51,1) 10%, rgba(23,20,20,1) 70%);
