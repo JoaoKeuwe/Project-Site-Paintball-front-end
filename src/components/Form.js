@@ -4,32 +4,11 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import FormContext from '../context/FormContext.js'
-
-const initiaFormState = {
-  playerName: '',
-  picture: '',
-  age: 0,
-  description: '',
-  team: '',
-  role: '',
-  priWeapon: '',
-  secWeapon: '',
-  str: 0,
-  mov: 0,
-  int: 0,
-  aim: 0,
-  eqp: 0,
-  friendly: 0,
-  regional: 0,
-  state: 0,
-  national: 0,
-  international: 0
-}
+import { initiaFormState } from '../helpers/constans.js';
 
 function Form () {
-  const [form, setForm] = useState(initiaFormState);
   const [view, setView] = useState(1);
-  const {setPlayer} = useContext(FormContext);
+  const {setPlayer, form, setForm} = useContext(FormContext);
 
   const handleInputChange = (value) => {
     setForm(form => ({...form, ...value}))
@@ -41,14 +20,15 @@ function Form () {
   }
 
   const firstForm = (
-    <Container>
-      <form id="firsForm">
+    <form id="firsForm">
+      <Container>
         <Row>
           <Col sm={8}>
             <label htmlFor="inputName"> Nome:
               <br />
               <input 
                 className = "InputForm"
+                maxlength="255"
                 value={form.playerName} 
                 id="inputName"
                 type="tex"
@@ -65,6 +45,7 @@ function Form () {
                 value={form.age}
                 id="inputAge"
                 type="number"
+                min="0"
                 onChange={(e) => handleInputChange({age: e.target.value})} 
               />
             </label>
@@ -75,6 +56,7 @@ function Form () {
             <label htmlFor="inputDescription"> Descrição:
               <br />
               <textarea
+                maxlength="255"
                 className = "InputForm"
                 value={form.description}
                 id="inputDescription"
@@ -88,6 +70,7 @@ function Form () {
             <label htmlFor="inputPicture"> Foto:
               <br />
               <input
+                maxlength="255"
                 className = "InputForm"
                 value={form.picture}
                 id="inputPicture"
@@ -97,11 +80,12 @@ function Form () {
             </label>
           </Col>
         </Row>
+        <div className="partidas">Características:</div>
         <div className="characteristicsContainer">
-          <span>Características:</span>
           <Row>
             <Col>
-              <label htmlFor="inputStrength"> Força:
+              <label htmlFor="inputStrength"> Força: 
+                <span>{` ${form.str}`}</span>
                 <br />
                 <input
                   className="RangeInput"
@@ -116,6 +100,7 @@ function Form () {
             </Col>
             <Col>
               <label htmlFor="inputEquipment"> Equipamento:
+                <span>{` ${form.eqp}`}</span>
                 <br />
                 <input
                   className="RangeInput"
@@ -132,6 +117,7 @@ function Form () {
           <Row>
             <Col>
               <label htmlFor="inputMovement"> Movimentação:
+                <span>{` ${form.mov}`}</span>
                 <br />
                 <input
                   className="RangeInput"
@@ -141,11 +127,12 @@ function Form () {
                   min="1"
                   max="10"
                   onChange={(e) => handleInputChange({mov: e.target.value})}
-                />
+                />             
               </label>
             </Col>
             <Col>
               <label htmlFor="inputInteligence"> Inteligência:
+                <span>{` ${form.int}`}</span> 
                 <br />
                 <input
                   className="RangeInput"
@@ -162,6 +149,7 @@ function Form () {
           <Row xs={2}>
             <Col>
               <label htmlFor="inputAim"> Mira:
+                <span>{` ${form.aim}`}</span>
                 <br />
                 <input
                   className="RangeInput"
@@ -181,8 +169,8 @@ function Form () {
           type="button"
           onClick={()=>{setView(2)}}
         >Próximo</button>
-      </form>
-    </Container>
+      </Container>
+    </form>
   )
 
   const secondForm = (
@@ -197,6 +185,7 @@ function Form () {
                 value={form.team} 
                 id="inputTeam"
                 type="tex"
+                maxlength="255"
                 placeholder="Sombra Jade"
                 onChange={(e) => handleInputChange({team: e.target.value})}
               />
@@ -256,57 +245,78 @@ function Form () {
             </label>
           </Col>
         </Row>
-        <div>
-          Partidas:
+        <div className="partidas">Partidas:</div>
+        <div >
           <Row>
             <Col>
-              <input
-                className = "InputForm smallInput"
-                value={form.friendly}
-                type="number"
-                placeholder="Amistosos"
-                onChange={(e) => handleInputChange({friendly: e.target.value})}
-              />
+              <label htmlFor="inputFriendly">
+                Amistosos:
+                <br/>
+                <input
+                  id="inputFriendly"
+                  className = "InputForm smallInput"
+                  value={form.friendly}
+                  type="number"
+                  min="0"
+                  onChange={(e) => handleInputChange({friendly: e.target.value})}
+                />
+              </label>
             </Col>
             <Col>
-              <input
-                className = "InputForm smallInput"
-                value={form.regional}
-                type="number"
-                placeholder="Regional"
-                onChange={(e) => handleInputChange({regional: e.target.value})}
-              />
+              <label htmlFor="inputRegional"> Regional:
+                <br/>
+                <input
+                  id="inputRegional"
+                  className = "InputForm smallInput"
+                  value={form.regional}
+                  type="number"
+                  min="0"
+                  onChange={(e) => handleInputChange({regional: e.target.value})}
+                />
+              </label>
             </Col>
           </Row>
           <Row>
             <Col>
-              <input
-                className = "InputForm smallInput"
-                value={form.state}
-                type="number"
-                placeholder="Estadual"
-                onChange={(e) => handleInputChange({state: e.target.value})}
-              />
+              <label htmlFor="inputState"> Estadual:
+                <br/>
+                <input
+                  className = "InputForm smallInput"
+                  value={form.state}
+                  type="number"
+                  min="0"
+                  id="inputState"
+                  onChange={(e) => handleInputChange({state: e.target.value})}
+                />
+              </label>
             </Col>
             <Col>
-              <input
-                className = "InputForm smallInput"
-                value={form.national}
-                type="number"
-                placeholder="Nacional"
-                onChange={(e) => handleInputChange({national: e.target.value})}
-              />
+              <label htmlFor="inputNational"> Nacional:
+                <br />
+                <input
+                  id="inputNational"
+                  className = "InputForm smallInput"
+                  value={form.national}
+                  type="number"
+                  min="0"
+                  onChange={(e) => handleInputChange({national: e.target.value})}
+                />
+              </label>
             </Col> 
           </Row>
           <Row xs={2}>
             <Col>
-              <input
-                className = "InputForm smallInput"
-                value={form.international}
-                type="number"
-                placeholder="Internacional"
-                onChange={(e) => handleInputChange({international: e.target.value})}
-              />
+              <label htmlFor="inputInternational" >Internacional
+                <br />
+                <input
+                  className = "InputForm smallInput"
+                  id="inputInternational"
+                  value={form.international}
+                  type="number"
+                  min="0"
+                  onChange={(e) => handleInputChange({international: e.target.value})}
+                />
+              </label>
             </Col> 
           </Row>
         </div>
