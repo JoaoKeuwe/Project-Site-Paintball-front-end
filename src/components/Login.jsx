@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../image/logo.png';
 import '../styles/Login.css'
+import loginPost from '../services/Login'
 
 
 
@@ -15,11 +16,19 @@ class Login extends React.Component {
         
     }
 
-    handleClick = () => {
+    handleClick = async (event) => {
+        event.preventDefault();
+        
         const {email, password} = this.state;
+        const result = await loginPost(email, password)
+       if (result.status !== 200) {
+           alert('deu ruim')
+        }else {
+        localStorage.setItem("token", result.data);
         const {history} = this.props;
-         history.push('/form')
-        localStorage.setItem("infoUser", JSON.stringify({email, password}));
+        history.push('/form') 
+
+       }
        };
 
         
