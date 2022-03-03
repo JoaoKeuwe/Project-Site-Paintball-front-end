@@ -1,24 +1,25 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import React from 'react';
-import './App.css';
- import Form from './components/Form';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Provider from './context/Provider';
 import Login from './components/Login';
+import Form from './components/Form';
 import Table from './components/Table';
-import Home from './components/Home';
+import './App.css';
 
 class App extends React.Component {
   render() {
-  return (
-    <BrowserRouter>
-      <Switch>
-      <Route exact path="/" component={ Login } />
-      <Route exact path="/home" component={ Home } />
-      <Route path="/form" component={ Form } />
-      <Route path="/table" component={ Table } />
-      </Switch>
-    </BrowserRouter>
-  );
-}
+    return (
+      <Provider>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={ Login } />
+            <Route path="/form" component={ Form } />
+            <Route path="/table" component={ Table } />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
+    );
+  }
 }
 
 export default App;
