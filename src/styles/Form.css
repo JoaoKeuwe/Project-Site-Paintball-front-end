@@ -1,17 +1,17 @@
 *{
-  background: #3D3D3D; 
+  background: #3D3D3D;
+  margin: 0px;
+  padding: 0px; 
 }
 
-.mainForm{
-  width: 40%;
-  margin: 20px auto;
-  display: flex;
+input, textarea, label, select{
+  width: 100%;
 }
 
-#firsForm, #secondForm{
-  margin: 50px auto;
+#firsForm, #secondForm {
   color: white;
   text-align: center;
+  padding: 20px;
 }
 
 .InputForm {
@@ -22,24 +22,10 @@
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
   border-radius: 10px;
-  width:450px;
-  margin-bottom: 20px;
 }
 
 label {
   text-align: left;
-}
-
-.smallInput {
-  width: 180px;
-}
-
-#inputName {
-  width: 300px;
-}
-
-#inputAge {
-  width: 120px;
 }
 
 .InputForm:focus {
@@ -71,14 +57,13 @@ label {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   input[type='range'] {
     overflow: hidden;
-    width: 210px;
+    width: 100%;
     -webkit-appearance: none;
     background-color: #282828;
     border: 1px solid #696565;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
     border-radius: 10px;
-    margin-right: 5px;
   }
   
   input[type='range']::-webkit-slider-runnable-track {
@@ -99,6 +84,6 @@ label {
 }
 
 .partidas {
-  margin: 5px 0px 10px 35px;
+  margin: 15px 0px;
   text-align: left;
 }

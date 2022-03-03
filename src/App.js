@@ -5,7 +5,7 @@ import Provider from './context/Provider';
 function App() {
   return (
     <Provider>
-      <div className="App" style={{display:"flex"}}>
+      <div className="App">
         <Form />
         <Form />
       </div>
