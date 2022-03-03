@@ -10,42 +10,38 @@ class Login extends React.Component {
         this.state = {
             email: '',
             password: '',
-            isValid: false
+           
         }
+        
     }
 
     handleClick = () => {
         const {email, password} = this.state;
         const {history} = this.props;
-
-        if (this.validEmail(email)) this.setState ({isValid: true}, () => {
-            const {isValid} = this.state;
-            if (isValid) history.push('/form')
-        })
-
-       
-
+         history.push('/form')
         localStorage.setItem("infoUser", JSON.stringify({email, password}));
+       };
+
+        
     
-    }
+    
 
     takeInfoUser = (event) => {
         const {value, name} = event.target
         this.setState ({
             [name]:value
         })
-    }
+     };
 
-        validEmail = (email) => {
+
+       /*  validEmail = (email) => {
             const emailRegex = /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/;
         return emailRegex.test(email)
-        
-
-    }
+    } */
     
 
 
-    render() { 
+    render() {
         return (
             <section className="login">
 
@@ -63,8 +59,8 @@ class Login extends React.Component {
                     htmlFor="email" className="input-email">
                       
                     <input
-                    type="email"
-                    placeholder="Email"
+                    type="text"
+                    placeholder="User Name"
                     name="email"
                     id="email"
                     
@@ -98,8 +94,9 @@ class Login extends React.Component {
                     </button>
                 </form>
             </section>
-        );
-    }
+        )
+    };
 }
+
  
 export default Login;
