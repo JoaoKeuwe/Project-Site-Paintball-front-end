@@ -1,21 +1,30 @@
-.table {
- margin-right: auto;
- margin-left: auto;
- width: 70%;
- height: 40%;
-}
-
-.informations {
-    display:flex;
-    flex-direction: row;
-    height: 400px;
-    justify-content: space-around;
-    border: 1px solid black;
-}
-
 .input-header {
-    margin-left: 800px;
-    width: 400px;
-    display: flex;
-    justify-content: center;
+  margin-left: 800px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.playersTable {
+  color: white;
+  width: 80%;
+  margin: 25px auto;
+  padding: 10px;
+}
+
+.tableHeader {
+  font-size: 20px;
+}
+
+.tableRow {
+  border-bottom: 1px solid white;
+}
+
+.playerRow {
+  border-bottom: 1px solid white;
+}
+
+tr.playerRow:hover {
+  border: 2px solid #199F5D;
+  color: #199F5D;
 }
