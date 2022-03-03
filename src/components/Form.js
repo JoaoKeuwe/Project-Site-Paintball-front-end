@@ -5,10 +5,12 @@ import FormReact from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import '../styles/Form.css';
+import formPost from '../services/FormPost';
 
 function Form () {
   const [view, setView] = useState(1);
   const {setPlayer, form, setForm} = useContext(FormContext);
+
 
   const handleInputChange = (value) => {
     setForm(form => ({...form, ...value}))
@@ -17,6 +19,7 @@ function Form () {
   const handleSubmit = () => {
     setPlayer(form);
     setForm(initiaFormState);
+    formPost(form);
   }
 
   const firstForm = (
@@ -27,7 +30,7 @@ function Form () {
             <br />
             <input 
               className = "InputForm"
-              maxlength="255"
+              maxLength="255"
               value={form.playerName} 
               id="inputName"
               type="tex"
@@ -45,7 +48,7 @@ function Form () {
               id="inputAge"
               type="number"
               min="0"
-              onChange={(e) => handleInputChange({age: e.target.value})} 
+              onChange={(e) => handleInputChange({age: +e.target.value})} 
             />
           </label>
         </Col>
@@ -55,7 +58,7 @@ function Form () {
           <label htmlFor="inputDescription"> Descrição:
             <br />
             <textarea
-              maxlength="255"
+              maxLength="255"
               className = "InputForm"
               value={form.description}
               id="inputDescription"
@@ -69,7 +72,7 @@ function Form () {
           <label htmlFor="inputPicture"> Foto:
             <br />
             <input
-              maxlength="255"
+              maxLength="255"
               className = "InputForm"
               value={form.picture}
               id="inputPicture"
@@ -93,7 +96,7 @@ function Form () {
                 type="range"
                 min="1"
                 max="10"
-                onChange={(e) => handleInputChange({str: e.target.value})}
+                onChange={(e) => handleInputChange({str: +e.target.value})}
               />
             </label>
           </Col>
@@ -108,7 +111,7 @@ function Form () {
                 type="range"
                 min="1"
                 max="10"
-                onChange={(e) => handleInputChange({eqp: e.target.value})}
+                onChange={(e) => handleInputChange({eqp: +e.target.value})}
               />
             </label>
           </Col>
@@ -125,7 +128,7 @@ function Form () {
                 type="range"
                 min="1"
                 max="10"
-                onChange={(e) => handleInputChange({mov: e.target.value})}
+                onChange={(e) => handleInputChange({mov: +e.target.value})}
               />             
             </label>
           </Col>
@@ -140,7 +143,7 @@ function Form () {
                 type="range"
                 min="1"
                 max="10"
-                onChange={(e) => handleInputChange({int: e.target.value})}
+                onChange={(e) => handleInputChange({int: +e.target.value})}
               />
           </label>
           </Col>
@@ -157,7 +160,7 @@ function Form () {
                 type="range" 
                 min="1" 
                 max="10"
-                onChange={(e) => handleInputChange({aim: e.target.value})}
+                onChange={(e) => handleInputChange({aim: +e.target.value})}
               />
             </label>
           </Col>
@@ -182,7 +185,7 @@ function Form () {
               value={form.team} 
               id="inputTeam"
               type="tex"
-              maxlength="255"
+              maxLength="255"
               placeholder="Sombra Jade"
               onChange={(e) => handleInputChange({team: e.target.value})}
             />
@@ -255,7 +258,7 @@ function Form () {
                 value={form.friendly}
                 type="number"
                 min="0"
-                onChange={(e) => handleInputChange({friendly: e.target.value})}
+                onChange={(e) => handleInputChange({friendly: +e.target.value})}
               />
             </label>
           </Col>
@@ -268,7 +271,7 @@ function Form () {
                 value={form.regional}
                 type="number"
                 min="0"
-                onChange={(e) => handleInputChange({regional: e.target.value})}
+                onChange={(e) => handleInputChange({regional: +e.target.value})}
               />
             </label>
           </Col>
@@ -283,7 +286,7 @@ function Form () {
                 type="number"
                 min="0"
                 id="inputState"
-                onChange={(e) => handleInputChange({state: e.target.value})}
+                onChange={(e) => handleInputChange({state: +e.target.value})}
               />
             </label>
           </Col>
@@ -296,7 +299,7 @@ function Form () {
                 value={form.national}
                 type="number"
                 min="0"
-                onChange={(e) => handleInputChange({national: e.target.value})}
+                onChange={(e) => handleInputChange({national: +e.target.value})}
               />
             </label>
           </Col> 
@@ -311,7 +314,7 @@ function Form () {
                 value={form.international}
                 type="number"
                 min="0"
-                onChange={(e) => handleInputChange({international: e.target.value})}
+                onChange={(e) => handleInputChange({international: +e.target.value})}
               />
             </label>
           </Col> 
