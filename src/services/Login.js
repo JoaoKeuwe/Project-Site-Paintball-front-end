@@ -10,7 +10,7 @@ const loginPost =  async (username, password) => {
           status: apiPost.status
         }
         return response
-} catch ({response}) {
+    } catch ({response}) {
     const result = {
         data: response.data,
         status: response.status
