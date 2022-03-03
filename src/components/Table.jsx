@@ -1,8 +1,19 @@
 import React from "react";
 import Header from "../components/Header";
 import "../styles/Table.css";
+import tableGet from '../services/TableGet';
+import { useEffect } from 'react';
 
 const Table = () => {
+  useEffect(()=> {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    const data = await tableGet();
+    console.log(data);
+  }
+
   return (
     <>
       <Header />

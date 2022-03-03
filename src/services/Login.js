@@ -1,9 +1,12 @@
 import api from '../services/Api'
 
 const loginPost =  async (username, password) => {
+    const headers = {
+        'Content-Type' : 'application/json',
+      }
 
     try{
-        const apiPost = await api.post('/login', {username, password})
+        const apiPost = await api.post('/login', {username, password}, {headers})
         
         const response = {
           data: apiPost.data,
