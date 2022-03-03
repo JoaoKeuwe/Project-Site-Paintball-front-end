@@ -1,0 +1,25 @@
+.table-header {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.picture-logo {
+  width: 80px;
+  margin: 15px;
+}
+
+.linkHeader {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: all ease 0.3s;
+  text-decoration: none;
+}
+
+.linkHeader:hover{
+  color: #199F5D;
+  font-size: 22px;
+}
+
