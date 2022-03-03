@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react';
-import '../styles/Form.css';
+import FormContext from '../context/FormContext.js'
+import { initiaFormState } from '../helpers/constans.js';
 import FormReact from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import FormContext from '../context/FormContext.js'
-import { initiaFormState } from '../helpers/constans.js';
+import '../styles/Form.css';
 
 function Form () {
   const [view, setView] = useState(1);
@@ -20,7 +20,7 @@ function Form () {
   }
 
   const firstForm = (
-    <FormReact id="firsForm">
+    <FormReact id="firstForm">
       <Row>
         <Col sm={8}>
           <label htmlFor="inputName"> Nome:

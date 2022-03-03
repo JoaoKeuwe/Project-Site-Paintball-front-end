@@ -8,7 +8,7 @@ input, textarea, label, select{
   width: 100%;
 }
 
-#firsForm, #secondForm {
+#firstForm, #secondForm {
   color: white;
   text-align: center;
   padding: 20px;
