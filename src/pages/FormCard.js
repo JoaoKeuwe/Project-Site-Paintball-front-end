@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Form from '../components/Form';
+import Card from '../components/Card';
 
 const FormCard = () => {
   return(
@@ -8,7 +9,7 @@ const FormCard = () => {
       <Header/>
       <div style={{display: 'flex'}}>
         <Form />
-        <Form />
+        <Card />
       </div>
     </>
   )
