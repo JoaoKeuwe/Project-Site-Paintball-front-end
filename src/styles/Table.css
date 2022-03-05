@@ -1,0 +1,39 @@
+.inputSearch {
+  color: white;
+  margin: 2% 2% 2% 50%;
+  padding: 5px 20px;
+  background: #282828;
+  border: 1px solid #696565;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
+  border-radius: 10px;
+  width: 40%;
+}
+
+.inputSearch:focus {
+  outline: 0;
+  border: 1px solid #1D5EFF;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
+}
+
+.playersTable {
+  color: white;
+  width: 80%;
+  margin: 25px auto;
+  padding: 10px;
+}
+
+.tableHeader {
+  font-size: 20px;
+}
+
+.tableRow, .playerRow {
+  border-bottom: 1px solid white;
+}
+
+
+tr.playerRow:hover {
+  border: 2px solid #199F5D;
+  color: #199F5D;
+}

@@ -4,7 +4,7 @@ import "./Card.css";
 import PrimaryWeapon from "./PrimaryWeapon.js";
 import PieRechart from "./PieRechart";
 import SecondaryWeapon from "./SecondaryWeapon.js";
-import Image from './image.png'
+// import Image from './image.png'
 import Experiences from "./Experiences.js";
 
 function Card() {
