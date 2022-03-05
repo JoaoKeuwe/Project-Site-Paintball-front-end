@@ -6,7 +6,7 @@
 
 
 body {
-    background-color:  #282828 !important;
+    background-color: #3D3D3D !important;
 }
 
 #root {
@@ -70,6 +70,7 @@ body {
     border-radius: 10px;
     margin-right: auto;
     margin-left: auto;
+    background: none;
 }
 
 .input-email {
@@ -117,4 +118,15 @@ body {
 .label-email{
     display:flex;
     flex-direction:column;
+    background: none;
 }
+
+.login {
+    margin-top: 240px;
+    background-color: none;
+}
+
+label {
+    background: none;
+}
+
