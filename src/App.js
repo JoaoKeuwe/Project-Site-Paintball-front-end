@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Provider from './context/Provider';
+import Card from "./components/Card";
+// import Radar from "./components/Radar";
+// import RadarNivo from "./components/RadarNivo";
+// import RadarRechart from "./components/RadarRechart";
+// import PieRechart from "./components/PieRechart";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider>
+      <Card/>
+    </Provider>
   );
 }
 
