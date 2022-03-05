@@ -37,13 +37,17 @@ class Login extends React.Component {
     } */
   render() {
     return (
+      
+        
+      
       <section className="login">
         <article>
           <img src={logo} alt="logo imagem" className="image-login" />
         </article>
 
         <form className="label-email">
-          <label htmlFor="email" className="input-email">
+
+          <label htmlFor="email" className="email">
             <input
               type="text"
               placeholder="User Name"
@@ -54,7 +58,7 @@ class Login extends React.Component {
             />
           </label>
 
-          <label htmlFor="input-password" className="input-password">
+          <label htmlFor="input-password" className="password">
             <input
               type="password"
               placeholder="Enter your password"
@@ -74,6 +78,8 @@ class Login extends React.Component {
           </button>
         </form>
       </section>
+     
+      
     );
   }
 }
