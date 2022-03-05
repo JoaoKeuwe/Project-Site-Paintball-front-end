@@ -25,9 +25,9 @@ function Card() {
           </div>
           <p className="PersonalDescription">{form.description}</p>
         </div>
-        {/* <img className="PersonalLogo" src={form.picture} alt="Opponent Logo" /> */}
         <div>
-          <img className="PersonalLogo" src={Image} alt="Opponent Logo" />
+        <img className="PersonalLogo" src={form.picture} alt="Opponent Logo" />
+          {/* <img className="PersonalLogo" src={Image} alt="Opponent Logo" /> */}
           <section className="ContainerWeapons">
             <div className="WeaponsA1">
               <p>A1</p>
