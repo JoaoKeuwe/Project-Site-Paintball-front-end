@@ -3,12 +3,18 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  border-bottom: 2px solid white;
 }
 
 .picture-logo {
   width: 80px;
   margin: 15px;
+  border: 2px solid rgb(93, 122, 88);
+    display:flex;
+    border-radius: 10px;
+    background: none;
 }
+
 
 .linkHeader {
   color: white;
