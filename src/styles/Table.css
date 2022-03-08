@@ -37,3 +37,9 @@ tr.playerRow:hover {
   border: 2px solid #199F5D;
   color: #199F5D;
 }
+
+.deleteButton{
+  background-color: #3D3D3D;
+  color: white;
+  font-size: 25px;
+}

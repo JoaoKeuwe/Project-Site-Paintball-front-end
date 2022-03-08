@@ -4,6 +4,8 @@ import "../styles/Table.css";
 import tableGet from '../services/TableGet';
 import { useEffect, useContext, useState } from 'react';
 import FormContext from '../context/FormContext';
+import { AiFillDelete } from 'react-icons/ai';
+import PlayerDelete from '../services/PlayerDelete';
 
 const Table = () => {
   const {setData, data, dataBase, setDataBase} = useContext(FormContext);
@@ -23,6 +25,11 @@ const Table = () => {
     const fetchData = await tableGet();
     setData(fetchData);
     setDataBase(fetchData);
+  }
+
+  const handleDelete = (id) => {
+    PlayerDelete(id);
+    getData();
   }
 
   return (
@@ -45,6 +52,7 @@ const Table = () => {
               <th>Armamentos</th>
               <th>Características</th>
               <th>Partidas</th>
+              <th>Excluir</th>
             </tr>
           </thead>
           <tbody>
@@ -73,6 +81,14 @@ const Table = () => {
                       <div>{`Estadual: ${player.state}`}</div>
                       <div>{`Nacional: ${player.national}`}</div>
                       <div>{`Internacional: ${player.international}`}</div>
+                    </td>
+                    <td>
+                      <button 
+                        className="deleteButton"
+                        onClick={()=>handleDelete(player.id)}
+                      >
+                        <AiFillDelete/>
+                      </button>
                     </td>
                   </tr>
                 ))
