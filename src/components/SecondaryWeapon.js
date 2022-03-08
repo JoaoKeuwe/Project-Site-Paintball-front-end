@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GiTec9, GiAk47, GiPistolGun, GiSteyrAug } from "react-icons/gi";
+import { RiForbidLine } from "react-icons/ri";
 import FormContext from "../context/FormContext";
 
 function SecondaryWeapon() {
@@ -10,17 +11,17 @@ function SecondaryWeapon() {
     case "smg":
       secondary = <GiTec9 />;
       break;
-    case "assaultRifle":
+    case "assault rifle":
       secondary = <GiAk47 />;
       break;
     case "pistol":
       secondary = <GiPistolGun />;
       break;
-    case "sniperRifle":
+    case "sniper rifle":
       secondary = <GiSteyrAug />;
       break;
     default:
-      secondary = <div>Arma não encontrada</div>;
+      secondary = <RiForbidLine />;
   }
   return secondary;
 }

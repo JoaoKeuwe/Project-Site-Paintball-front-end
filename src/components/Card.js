@@ -1,14 +1,17 @@
 import React, { useContext } from "react";
 import FormContext from "../context/FormContext.js";
-import "./Card.css";
+import '../styles/Card.css';
 import PrimaryWeapon from "./PrimaryWeapon.js";
 import PieRechart from "./PieRechart";
 import SecondaryWeapon from "./SecondaryWeapon.js";
-// import Image from './image.png'
 import Experiences from "./Experiences.js";
 
 function Card() {
   const { form } = useContext(FormContext);
+
+  const defaultImg = (event) => {
+    event.target.src = 'https://ligadoamusica.com.br/wp-content/uploads/2021/07/Rick-Astley-Never-Gonna-Give-You-Up-youtube-ok.jpg'
+  }
 
   return (
     <main className="ContainerBody">
@@ -26,8 +29,7 @@ function Card() {
           <p className="PersonalDescription">{form.description}</p>
         </div>
         <div>
-        <img className="PersonalLogo" src={form.picture} alt="Opponent Logo" />
-          {/* <img className="PersonalLogo" src={Image} alt="Opponent Logo" /> */}
+        <img className="PersonalLogo" src={form.picture} onError={defaultImg} alt="Opponent Logo" />
           <section className="ContainerWeapons">
             <div className="WeaponsA1">
               <p>A1</p>
