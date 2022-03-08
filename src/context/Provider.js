@@ -5,10 +5,10 @@ import { initiaFormState } from '../helpers/constans.js';
 const Provider = ({children}) => {
   const [form, setForm] = useState(initiaFormState);
   const [player, setPlayer] = useState({});
+  const [dataList, setDataList] = useState([]);
   const [data, setData] = useState([]);
-  const [dataBase, setDataBase] = useState([]);
 
-  const context = {player, setPlayer, form, setForm, data, setData, dataBase, setDataBase}
+  const context = {player, setPlayer, form, setForm, data, setData, dataList, setDataList}
 
   return (
     <FormContext.Provider value={context}>
