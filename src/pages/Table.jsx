@@ -7,8 +7,8 @@ import FormContext from '../context/FormContext';
 import { AiFillDelete } from 'react-icons/ai';
 import PlayerDelete from '../services/PlayerDelete';
 
-const Table = () => {
-  const {setData, data, dataBase, setDataBase} = useContext(FormContext);
+const Table = ({history}) => {
+  const {setData, data, dataBase, setDataBase, setForm} = useContext(FormContext);
   const [nameFilter, setNameFilter] = useState('');
 
   useEffect(()=> {
@@ -30,6 +30,11 @@ const Table = () => {
   const handleDelete = (id) => {
     PlayerDelete(id);
     getData();
+  }
+
+  const handleUpdate = (player) => {
+    setForm(player)
+    history.push('/form')
   }
 
   return (
@@ -59,23 +64,26 @@ const Table = () => {
             {
               data.length > 0 && (
                 data.map((player)=>(
-                  <tr key={player.id} className="playerRow">
-                    <td>{player.id}</td>
-                    <td>{player.playerName}</td>
-                    <td>{player.role}</td>
-                    <td>{player.team}</td>
-                    <td>
+                  <tr 
+                    key={player.id} 
+                    className="playerRow"
+                  >
+                    <td onClick={()=>handleUpdate(player)}>{player.id}</td>
+                    <td onClick={()=>handleUpdate(player)}>{player.playerName}</td>
+                    <td onClick={()=>handleUpdate(player)}>{player.role}</td>
+                    <td onClick={()=>handleUpdate(player)}>{player.team}</td>
+                    <td onClick={()=>handleUpdate(player)}>
                       <div>{`Primário: ${player.priWeapon}`}</div>
                       <div>{`Secundário: ${player.secWeapon}`}</div>
                     </td>
-                    <td> 
+                    <td onClick={()=>handleUpdate(player)}> 
                       <div>{`Força: ${player.str}`}</div>
                       <div>{`Movimentação: ${player.mov}`}</div>
                       <div>{`Mira: ${player.aim}`}</div>
                       <div>{`Equipamento: ${player.eqp}`}</div>
                       <div>{`Inteligência: ${player.int}`}</div>
                     </td>
-                    <td> 
+                    <td onClick={()=>handleUpdate(player)}> 
                       <div>{`Amistoso: ${player.friendly}`}</div>
                       <div>{`Regional: ${player.regional}`}</div>
                       <div>{`Estadual: ${player.state}`}</div>
