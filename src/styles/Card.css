@@ -7,12 +7,12 @@
 }
 
 .ContainerBody {
-  width: 60%;
+  width: 80%;
   padding: 10px 20px;
   border-radius: 20px;
   color: #99e67d;
   margin: 20px;
-  background: linear-gradient(182.08deg, #52504f 1.55%, #131111 98.12%) !important;
+  background: linear-gradient(182.08deg, #52504f 1.55%, #131111 98.12%)  !important;
 }
 
 /* PLAYER'S NAME */
