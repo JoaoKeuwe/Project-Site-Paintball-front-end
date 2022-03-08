@@ -1,13 +1,12 @@
-*{
-  background: #3D3D3D;
+*{  
   margin: 0px;
   padding: 0px; 
+  background: #3D3D3D;
 }
 
 .mainForm {
   background: #3D3D3D;
-  width: 100%;
-  height: 100%;
+  margin-left: 50px;
 }
 
 #firstForm, #secondForm {
