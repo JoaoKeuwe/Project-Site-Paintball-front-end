@@ -7,16 +7,16 @@ import Col from 'react-bootstrap/Col'
 import '../styles/Form.css';
 import formPost from '../services/FormPost';
 import PutPlayer from '../services/PutPlayer.js';
+import getData from '../helpers/getData';
 
-function Form () {
+const Form = ({history}) => {
   const [view, setView] = useState(1);
-  const {setPlayer, form, setForm} = useContext(FormContext);
-
+  const {setPlayer, form, setForm, setData, setDataList} = useContext(FormContext);
 
   const handleInputChange = (value) => {
     setForm(form => ({...form, ...value}))
   }
-
+  
   const handleSubmit = () => {
     setPlayer(form);
     if (form.id === undefined) {
@@ -44,6 +44,8 @@ function Form () {
       });
     }
     setForm(initiaFormState);
+    getData(setData, setDataList);
+    history.push('/table');
   }
 
   const firstForm = (

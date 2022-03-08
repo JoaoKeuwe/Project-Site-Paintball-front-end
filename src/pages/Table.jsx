@@ -1,31 +1,25 @@
 import React from "react";
 import Header from "../components/Header";
 import "../styles/Table.css";
-import tableGet from '../services/TableGet';
 import { useEffect, useContext, useState } from 'react';
 import FormContext from '../context/FormContext';
 import { AiFillDelete } from 'react-icons/ai';
 import PlayerDelete from '../services/PlayerDelete';
+import getData from '../helpers/getData';
 
 const Table = ({history}) => {
-  const {setData, data, dataBase, setDataBase, setForm} = useContext(FormContext);
+  const {setData, data, dataList, setDataList, setForm} = useContext(FormContext);
   const [nameFilter, setNameFilter] = useState('');
 
   useEffect(()=> {
-    getData();
+    getData(setData, setDataList);
   }, []);
 
   useEffect(()=>{
-    const filterData = dataBase.filter((player)=>(
+    const filterData = data.filter((player)=>(
       player.playerName.toUpperCase().includes(nameFilter.toUpperCase())));
-    setData(filterData)
+    setDataList(filterData)
   }, [nameFilter]);
-
-  const getData = async () => {
-    const fetchData = await tableGet();
-    setData(fetchData);
-    setDataBase(fetchData);
-  }
 
   const handleDelete = (id) => {
     PlayerDelete(id);
@@ -62,8 +56,8 @@ const Table = ({history}) => {
           </thead>
           <tbody>
             {
-              data.length > 0 && (
-                data.map((player)=>(
+              dataList.length > 0 && (
+                dataList.map((player)=>(
                   <tr 
                     key={player.id} 
                     className="playerRow"

@@ -2,12 +2,12 @@ import React from 'react';
 import Header from '../components/Header';
 import Form from '../components/Form';
 
-const FormCard = () => {
+const FormCard = ({history}) => {
   return(
     <>
       <Header/>
       <div style={{display: 'flex'}}>
-        <Form />
+        <Form history={ history }/>
         <Form />
       </div>
     </>
