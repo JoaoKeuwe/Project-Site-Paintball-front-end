@@ -1,20 +1,40 @@
-/* body {
-    background-color: #282828;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-img {
-    border: 2px solid rgb(93, 122, 88);
+
+body {
+    background-color: #3D3D3D !important;
 }
 
-section {
+#root {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.login-bg{
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* .login {
+    margin-top: 240px;
+    background-color:#282828;
+} */
+
+.login  {
+
+    margin-top: 240px;
+   /*  background-color:#282828; */
+
     height: 500px;
     width: 600px;
-
     margin-left: auto;
     margin-right: auto;
-    
-
-
     box-shadow: 6px 5px 19px rgb(93, 122, 88);
     border: 2px solid none;
     background: rgb(52,52,51);
@@ -28,22 +48,23 @@ section {
     
 }
 
-input {
+/* input {
     background-color: #282828;
     border-radius: 10px;
     height: 26px;
     color: white;
     border: 1px solid gray ;
-}
+} */
 
-button {
+/* button {
     background-color: #199F5D;
     border-radius: 10px;
     height: 26px;
     border: 1px none;
-}
+} */
 
 .image-login {
+    border: 2px solid rgb(93, 122, 88);
     width: 100px;
     display:flex;
     border-radius: 10px;
@@ -53,6 +74,12 @@ button {
 }
 
 .input-email {
+    padding-left: 7px;
+    background-color: #282828;
+    border-radius: 10px;
+    height: 26px;
+    color: white;
+    border: 1px solid gray ;
     display:flex;
     margin-right: auto;
     width: 280px;
@@ -61,6 +88,12 @@ button {
 }
 
 .input-password {
+    background-color: #282828;
+    border-radius: 10px;
+    height: 26px;
+    color: white;
+    border: 1px solid gray ;
+    padding-left: 7px;
     display:flex;
     width: 280px;
     margin-right: auto;
@@ -69,6 +102,10 @@ button {
 }
 
 .button-login {
+    background-color: #199F5D;
+    border-radius: 10px;
+    height: 26px;
+    border: 1px none;
     width: 90px;
     font-size: 13px;
     color: white;
@@ -92,4 +129,3 @@ button {
 label {
     background: none;
 }
- */

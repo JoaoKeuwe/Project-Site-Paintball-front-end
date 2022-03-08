@@ -6,20 +6,46 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import '../styles/Form.css';
 import formPost from '../services/FormPost';
+import PutPlayer from '../services/PutPlayer.js';
+import getData from '../helpers/getData';
 
-function Form () {
+const Form = ({history}) => {
   const [view, setView] = useState(1);
-  const {setPlayer, form, setForm} = useContext(FormContext);
-
+  const {setPlayer, form, setForm, setData, setDataList} = useContext(FormContext);
 
   const handleInputChange = (value) => {
     setForm(form => ({...form, ...value}))
   }
-
+  
   const handleSubmit = () => {
     setPlayer(form);
+    if (form.id === undefined) {
+      formPost(form)
+    } else {
+      PutPlayer(form.id, {
+        playerName: form.playerName,
+        picture: form.picture,
+        age: +form.age,
+        description: form.description,
+        team: form.team,
+        role: form.role,
+        priWeapon: form.priWeapon,
+        secWeapon: form.secWeapon,
+        str: +form.str,
+        mov: +form.mov,
+        int: +form.int,
+        aim: +form.aim,
+        eqp: +form.eqp,
+        friendly: +form.friendly,
+        regional: +form.regional,
+        state: +form.state,
+        national: +form.national,
+        international: +form.international
+      });
+    }
     setForm(initiaFormState);
-    formPost(form);
+    getData(setData, setDataList);
+    history.push('/table');
   }
 
   const firstForm = (

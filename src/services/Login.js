@@ -1,4 +1,4 @@
-import api from '../services/Api'
+import api from "../services/Api";
 
 const loginPost =  async (username, password) => {
     const headers = {
@@ -15,12 +15,12 @@ const loginPost =  async (username, password) => {
         return response
     } catch ({response}) {
     const result = {
-        data: response.data,
-        status: response.status
-    }
-   
-   return result;
-}
-}
+      data: response.data,
+      status: response.status,
+    };
+
+    return result;
+  }
+};
 
 export default loginPost;
