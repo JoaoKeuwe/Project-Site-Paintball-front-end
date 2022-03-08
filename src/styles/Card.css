@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Code', monospace;
+}
+
+.ContainerBody {
+  width: 80%;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #99e67d;
+  margin: 20px;
+  background: linear-gradient(182.08deg, #52504f 1.55%, #131111 98.12%)  !important;
+}
+
+/* PLAYER'S NAME */
+.ContainerTitle {
+  font-size: 18px;
+  text-align: center;
+  margin: 15px 0;
+  color: #d8d8d8;
+  font-weight: bold;
+  /* background: none; */
+}
+
+/* INFO PROFILE */
+.ContainerPersonal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background: none; */
+}
+
+.ContainerPersonalTeam, .ContainerPersonalRole {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #d8d8d8;
+}
+
+.PersonalTeam, .PersonalRole {
+  font-size: 15px;
+  /* text-transform: uppercase; */
+  font-weight: bold;
+  width: 75px;
+  margin-right: 10px;
+  /* background: none; */
+}
+
+.PersonalTeamName, .PersonalRoleText {
+  font-size: 12px;
+  background: linear-gradient(270deg, #353332 0%, #1d1a1a 100%);
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 75px;
+  text-align: center;
+  padding: 5px;
+}
+
+.PersonalDescription {
+  font-size: 14px;
+  width: 200px;
+  padding: 10px 0;
+  color: #d8d8d8;
+}
+
+/* IMG PROFILE */
+.PersonalLogo {
+  width: 150px;
+  height: 160px;
+  margin: 0 10px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.25);
+}
+/* 
+.PersonalLogo:before {
+  content: url('https://ligadoamusica.com.br/wp-content/uploads/2021/07/Rick-Astley-Never-Gonna-Give-You-Up-youtube-ok.jpg');
+  width: 150px;
+  height: 160px;
+  margin: 0 10px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.25);
+} */
+
+.ContainerWeapons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.WeaponsA1, .WeaponsA2 {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  align-items: center;
+}
+
+.WeaponsA1 p, .WeaponsA2 p {
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #d8d8d8;
+}
+
+.WeaponsA1 svg, .WeaponsA2 svg {
+  font-size: 35px;
+  color: #83e261;
+}
+
+/* CONTAINER CHARACTERISTICS EXPERIENCE */
+.ContainerProfessional {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 20px;
+  color: #d8d8d8;
+  /* background: none; */
+}
+
+/* CHARACTERISTCS */
+.ProfessionalCharacteristics {
+  font-weight: bold;
+  margin-bottom: 10px;
+  /* background: none; */
+}
+
+
+/* EXPERIENCE STARS */
+
+.ProfessionalExperience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: none; */
+}
+
+.ProfessionalExperienceTitle {
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-right: 13px;
+  /* background: none; */
+}
+
+.ExperienceA, .ExperienceR, .ExperienceE, .ExperienceN, .ExperienceI {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+}
+
+.ExperienceA div, .ExperienceR div, .ExperienceE div, .ExperienceN div, .ExperienceI div {
+  color: #83e261;
+  margin-right: 5px;
+}
+
+.ExperienceA p, .ExperienceR p, .ExperienceE p, .ExperienceN p, .ExperienceI p {
+  margin-right: 10px;
+  width: 10px;
+}
