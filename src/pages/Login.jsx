@@ -53,6 +53,7 @@ class Login extends React.Component {
               placeholder="User Name"
               name="email"
               id="email"
+              autoComplete="off"
               onChange={this.takeInfoUser}
               className="input-email"
             />
@@ -64,6 +65,7 @@ class Login extends React.Component {
               placeholder="Enter your password"
               className="input-password"
               name="password"
+              autoComplete="off"
               onChange={this.takeInfoUser}
               id="password"
             />
