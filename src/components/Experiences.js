@@ -9,27 +9,60 @@ function Experiences() {
   const [emptyStarsSta, setEmptyStarsSta] = useState(0);
   const [emptyStarsNat, setEmptyStarsNat] = useState(0);
   const [emptyStarsInt, setEmptyStarsInt] = useState(0);
+  
+  const [fullStarsFri, setFullStarsFri] = useState(0);
+  const [fullStarsReg, setFullStarsReg] = useState(0);
+  const [fullStarsSta, setFullStarsSta] = useState(0);
+  const [fullStarsNat, setFullStarsNat] = useState(0);
+  const [fullStarsInt, setFullStarsInt] = useState(0);
 
   useEffect(() => {
-    const starFri = 3 - Number(form.friendly);
-    const starReg = 3 - Number(form.regional);
-    const starSta = 3 - Number(form.state);
-    const starNat = 3 - Number(form.national);
-    const starInt = 3 - Number(form.international);
+    setFullStarsFri(fillStar(form.friendly));
+    setFullStarsReg(fillStar(form.regional));
+    setFullStarsSta(fillStar(form.state));
+    setFullStarsNat(fillStar(form.national));
+    setFullStarsInt(fillStar(form.international));
+  }, [form.friendly, form.regional, form.state, form.national, form.international])
+  
+  useEffect(() => {
+    const starFri = 3 - fullStarsFri;
+    const starReg = 3 - fullStarsReg;
+    const starSta = 3 - fullStarsSta;
+    const starNat = 3 - fullStarsNat;
+    const starInt = 3 - fullStarsInt;
+    console.log(starFri)
 
     setEmptyStarsFri(starFri);
     setEmptyStarsReg(starReg);
     setEmptyStarsSta(starSta);
     setEmptyStarsNat(starNat);
     setEmptyStarsInt(starInt);
-  }, [form.friendly, form.regional, form.state, form.national, form.international]);
+  }, [fullStarsFri, fullStarsReg, fullStarsSta, fullStarsNat, fullStarsInt]);
+
+  function fillStar(games) {
+    let star;
+    switch (true) {
+      case +games >= 15:
+        star = 3
+        break;
+      case +games >= 10:
+        star = 2
+        break;
+      case +games >= 5:
+        star = 1
+        break;
+      default:
+        star = 0
+    }
+    return star;
+  }
   
   return(
     <section className="Experiences">
           <div className="ExperienceA">
             <p>A</p>
             <div>
-              {[...Array(form.friendly)].map((star, index) => {
+              {[...Array(fullStarsFri)].map((star, index) => {
                 return <AiFillStar key={index} />;
               })}
               {[...Array(emptyStarsFri)].map((star, index) => {
@@ -41,7 +74,7 @@ function Experiences() {
           <div className="ExperienceR">
             <p>R</p>
             <div>
-              {[...Array(form.regional)].map((star, index) => {
+              {[...Array(fullStarsReg)].map((star, index) => {
                 return <AiFillStar key={index}/>;
               })}
               {[...Array(emptyStarsReg)].map((star, index) => {
@@ -53,7 +86,7 @@ function Experiences() {
           <div className="ExperienceE">
             <p>E</p>
             <div>
-              {[...Array(form.state)].map((star, index) => {
+              {[...Array(fullStarsSta)].map((star, index) => {
                 return <AiFillStar key={index} />;
               })}
               {[...Array(emptyStarsSta)].map((star, index) => {
@@ -65,7 +98,7 @@ function Experiences() {
           <div className="ExperienceN">
             <p>N</p>
             <div>
-              {[...Array(form.national)].map((star, index) => {
+              {[...Array(fullStarsNat)].map((star, index) => {
                 return <AiFillStar key={index} />;
               })}
               {[...Array(emptyStarsNat)].map((star, index) => {
@@ -77,7 +110,7 @@ function Experiences() {
           <div className="ExperienceI">
             <p>I</p>
             <div>
-              {[...Array(form.international)].map((star, index) => {
+              {[...Array(fullStarsInt)].map((star, index) => {
                 return <AiFillStar key={index} />;
               })}
               {[...Array(emptyStarsInt)].map((star, index) => {

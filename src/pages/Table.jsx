@@ -21,9 +21,9 @@ const Table = ({history}) => {
     setDataList(filterData)
   }, [nameFilter]);
 
-  const handleDelete = (id) => {
-    PlayerDelete(id);
-    getData();
+  const handleDelete = async (id) => {
+    await PlayerDelete(id);
+    getData(setData, setDataList);
   }
 
   const handleUpdate = (player) => {
@@ -34,7 +34,7 @@ const Table = ({history}) => {
   return (
     <>
       <Header />
-      <div>
+      <div className="container-table">
         <input 
           type="text"
           className="inputSearch"
