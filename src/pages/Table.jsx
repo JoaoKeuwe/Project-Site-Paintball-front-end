@@ -6,10 +6,18 @@ import FormContext from '../context/FormContext';
 import { AiFillDelete } from 'react-icons/ai';
 import PlayerDelete from '../services/PlayerDelete';
 import getData from '../helpers/getData';
+import verifyToken from '../services/verifyToken';
 
 const Table = ({history}) => {
   const {setData, data, dataList, setDataList, setForm} = useContext(FormContext);
   const [nameFilter, setNameFilter] = useState('');
+
+  useEffect(()=>{
+    verifyToken.empty(history);
+  }, [history]);
+  useEffect(()=>{
+    verifyToken.expire(history);
+  }, [history]);
 
   useEffect(()=> {
     getData(setData, setDataList);
