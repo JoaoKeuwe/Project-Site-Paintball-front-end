@@ -15,12 +15,12 @@ Foi desenvolvido pensado em um projeto real, foi feito em Squad Programming com 
 
 Utilizei as seguintes Linguagens:
 
--React JS<br/>
--React Hooks<br/>
--Context API<br/>
--API´s<br/>
--Banco de dados<br/>
--CSS<br/>
+- React JS<br/>
+- React Hooks<br/>
+- Context API<br/>
+- API´s<br/>
+- Banco de dados<br/>
+- CSS<br/>
  
 ##
 
