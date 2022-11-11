@@ -9,6 +9,7 @@ O projeto Sombra Jade é um site completo de um time de Airsoft, onde nele podem
 Foi desenvolvido pensado em um projeto real, foi feito em Squad Programming com a ajuda de Fernando Serpa, Larissa Araújo, Diego Dmitry, Marina Miranda Fischer.
 <h5/>
 
+
 <div/>
 
 ##
